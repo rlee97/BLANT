@@ -716,10 +716,8 @@ void WalkLSteps(MULTISET *XLS, QUEUE *XLQ, int* X, GRAPH *G, int k, int cc)
 	} else {
 	//Pick a random edge. Add the vertices from it to our data structures
 	int edge;
-    do {
 	edge = G->numEdges * RandomUniform();
 	X[0] = G->edgeList[2*edge];
-    } while(!SetIn(_componentSet[cc], X[0]));
     X[1] = G->edgeList[2*edge+1];
 
     MultisetAdd(XLS, X[0]); QueuePut(XLQ, (foint) X[0]);
